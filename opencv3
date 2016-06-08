@@ -1,0 +1,11 @@
+This file is the instruction for installtion openCV3 for image analysis
+source: https://rivercitylabs.org/up-and-running-with-opencv3-and-python-3-anaconda-edition/
+
+Go go command line or anaconda prompt
+
+conda install -c https://conda.binstar.org/menpo opencv3
+
+this command installs opencv3 library from binstar under user menpo
+
+un import cv2 (!!!IMPORTANT it’s still cv2 not cv3). To check the version print(cv2.__version__) 
+If everything worked out you should have 3.0.0
