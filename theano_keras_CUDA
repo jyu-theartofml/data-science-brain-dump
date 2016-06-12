@@ -1,3 +1,8 @@
+http://markus.com/install-theano-on-aws/
+Check this first to run theano on GPU
+
+
+
 Follow this URL to install CUDA and other Keras dependencies on Python 3.4
 
 http://ankivil.com/installing-keras-theano-and-dependencies-on-windows-10/
