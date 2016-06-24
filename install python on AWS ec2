@@ -1,0 +1,79 @@
+SOURCE: http://blog.impiyush.me/2015/02/running-ipython-notebook-server-on-aws.html
+
+ 4. Launch your instance and ssh into it to perform the following operations
+
+    First of all we are going to use Anaconda Python Distribution for installing all the required Python libraries. This is a free distribution and we are going to use the Linux version of it. Remember to verify the latest version of the distribution from the site. This blog is updated to reflect the changes in the latest Anaconda distribution - 2.4.1.
+
+    $ wget https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda2-2.4.1-Linux-x86_64.sh
+       
+
+    Next we will bash to run this .sh file. You need to accept the license terms and set the installation directory for the anaconda distribution. I use the default one only, which is "/home/ubuntu/anaconda2/". Also, it asks you to add the default path of anaconda python to your .bashrc profile. You can accept to do it or add it manually.
+
+    $ bash Anaconda2-2.4.1-Linux-x86_64.sh
+       
+
+    Now you need to check, which python version you are using, just to confirm if we are using the one from Anaconda Distribution or not. You can do this by using
+
+    $ which python
+       
+
+    This will list the python your system is currently using. If it does not mentions the one from ".../anaconda2/..." folder, then you can use the following command to re-load your .bashrc, so as to set the correct python
+
+    $ source .bashrc
+       
+
+    Open the iPython Terminal to get an encrypted password so as to use it for logging into our iPython Notebook Server. Remember to copy and save the output of this command, which will be an encrypted password, something like "sha1..."
+
+    $ ipython
+    In [1]:from IPython.lib import passwd
+    In [2]:passwd()
+
+    and exit out of ipython terminal using "exit" command. [ I'm not gonna use this password(shown in the pic below), so don't waste your time trying to copy and use it. ;) ]
+    Now we're going to create the configuration profile for our Jupyter Notebook server
+
+    $ jupyter notebook --generate-config
+       
+
+    The next thing is going to be to create a self-signed certificate for accessing our Notebooks through HTTPS
+
+    $ mkdir certs
+    $ cd certs
+    $ sudo openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mycert.pem -out mycert.pem
+       
+
+    it will ask some questions, please answer them to the best of your knowledge as some of them are required to successfully create the certificate.
+
+    It's time to change the config settings of our server
+
+    $ cd ~/.jupyter/
+    $ vi jupyter_notebook_config.py
+       
+
+    You will see a long list of configuration settings. You can go through each one of them and uncomment them as you like, but for me I know what I want, so I'll add the following settings to the top of the file and leave the rest commented as it is.
+
+    c = get_config()
+
+    # Kernel config
+    c.IPKernelApp.pylab = 'inline'  # if you want plotting support always in your notebook
+
+    # Notebook config
+    c.NotebookApp.certfile = u'/home/ubuntu/certs/mycert.pem' #location of your certificate file
+    c.NotebookApp.ip = '*'
+    c.NotebookApp.open_browser = False  #so that the ipython notebook does not opens up a browser by default
+    c.NotebookApp.password = u'sha1:68c136a5b064...'  #the encrypted password we generated above
+    # It is a good idea to put it on a known, fixed port
+    c.NotebookApp.port = 8888
+       
+
+    We are almost done. Now its time to start our Jupyter notebook server. For this, first I'll create a new folder which will store all my notebooks
+
+    $ cd ~
+    $ mkdir Notebooks
+    $ cd Notebooks
+       
+
+    and now I'll start my notebook server
+
+    $ jupyter notebook
+       
+
