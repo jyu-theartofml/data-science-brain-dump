@@ -1,0 +1,63 @@
+SOURCE URL:https://www.dataquest.io/blog/docker-data-science/
+This is a great resource regarding setting up Docker. Also checkout Kaggle's Docker tutorial
+
+***************************************************
+Downloading the Docker Data Science images
+
+The next step is to download the image you want. Here are our currently available data science images:
+
+    dataquestio/python3-starter – This contains a python 3 installation, jupyter notebook, and many popular data science libraries such as numpy, pandas, scipy, scikit-learn, and nltk.
+    dataquestio/python2-starter – This contains a python 2 installation, jupyter notebook, and many popular data science libraries such as numpy, pandas, scrapy, scipy, scikit-learn, and nltk.
+
+You can download the images by typing docker pull IMAGE_NAME. If you wanted to pull dataquestio/python3-starter, 
+you’d type docker pull dataquestio/python3-starter into a shell prompt. This will download the images from Docker Hub, 
+which is like Github, but for Docker images. It will download the image files onto your machine, so you can start a container 
+with the image.
+
+Make a folder
+
+Make a folder on your local machine that will correspond to where you want the notebooks stored. This folder will contain all of your work, and will persist on your local machine, even if you terminate the docker container. For this example, we’ll make this folder at /home/vik/notebooks.
+Running the image
+
+Once you download the image, you can run it using docker run. We need to pass in a few options to ensure that it’s configured properly.
+
+    The -p flag sets the ports so that we can access the Jupyter notebook server from our machine.
+    The -d flag runs the container in detached mode, as a background process.
+    The -v flag lets us specify which directory on the local machine to store our notebooks in.
+
+The full command looks like docker run -d -p 443:8888 -v /home/vik/notebooks:/home/ds/notebooks dataquestio/python3-starter.
+443 is the port for https, it needs to open up to receive 8888 from docker
+
+You should change /home/vik/notebooks to whatever folder you created to store your notebooks in. You should change dataquestio/python3-starter to your preferred docker image.
+
+Executing docker run will create a Docker container. This is isolated from your local machine, and it may be helpful to think of it as a separate computer. Inside this container, Jupyter notebook will be running, and we’ll be able to access many data science packages.
+
+The docker run command will print a long string. This is the unique id of your container, and is used when modifying the container with other docker containers. We’ll refer to it as the container id from now on.
+
+Viewing the notebook server
+If you’re running Linux, the next step is easy – just go to localhost:8888, and you should see the notebook running. If you’re on Windows or OSX, and you followed the Docker installation instructions earlier, you used docker-machine in your docker installation process. The name of your local machine is default, and running docker-machine ip default will tell you the ip of the docker container. If you used a different name, like dev, just swap it for default in the command. Then, you just visit CONTAINER_IP:8888 to see the notebook (replace CONTAINER_IP with the ip of your container).
+
+Adding in data files
+
+If you want to add data files into your environment, you have three options. The first is to place them in the folder you created earlier to use for notebooks. Any files you place in there will automatically be accessible from inside your Jupyter notebooks.
+
+The second way is to use the docker cp command. Docker cp can copy files from your machine to the container, and vice versa. Let’s say you want to copy a file at /home/vik/data.csv to a container with id 4greg24134. You would type docker cp /home/vik/data.csv 4greg24134:/home/ds/notebooks. This will copy the data.csv file into the notebooks directory in the container. You can place files anywhere you want, but putting them in the notebooks directory makes them easily accessible from Jupyter notebook.
+
+The third way is to use the upload button at the top right of the Jupyter notebook main page. This will let you select a file and upload it to the notebooks directory in the container.
+
+
+Installing more packages
+
+If you want to install your own packages inside the container, you can get into it and run any normal bash shell commands. In order to get into a container, you’ll need to run docker exec. Docker exec takes a specific container id, and a command to run. For instance, typing docker exec -it 4greg24134 /bin/bash will open a shell prompt in the container with id 4greg24134. The -it flags ensure that we keep an input session open with the container, and can enter commands.
+
+After running docker exec, you’ll be put into a shell prompt inside the container. The container is running python in a virtual environment called ds, which should already be activated.
+
+To install packages, just type pip install PACKAGE_NAME. You could install requests with pip install requests.
+
+When you want to exit the container shell prompt, just type exit.
+
+
+Shutting down your docker container
+
+When you’re done exploring your data, you can shut down the docker container. Use docker rm -f CONTAINER_ID to stop the container. You should have your container id from earlier. If you don’t, you can find it by running docker ps. Your notebooks will still be available on your local machine, in the folder you created, even after you shut down the container.
+
