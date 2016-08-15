@@ -1,0 +1,5 @@
+ git clone https://github.com/dmlc/xgboost
+  cd xgboost
+  bash build.sh
+  cd python-package
+  pip3 install -e 
