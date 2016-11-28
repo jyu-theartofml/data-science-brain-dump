@@ -6,5 +6,7 @@ Check this first to run theano on GPU
 Follow this URL to install CUDA and other Keras dependencies on Python 3.4
 
 http://ankivil.com/installing-keras-theano-and-dependencies-on-windows-10/
+http://ankivil.com/making-theano-faster-with-cudnn-and-cnmem-on-windows-10/
 
 Note, the commands presented need to be run in Anaconda command prompt
+the second link worked on windows 10 and python 2.7 env, follow instructions, esp in creating .theanorc file. it  should be .theanorc , no name infront of the .
