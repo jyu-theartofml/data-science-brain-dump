@@ -1,5 +1,6 @@
-http://markus.com/install-theano-on-aws/
-Check this first to run theano on GPU
+
+Check this first to run theano on GPU:
+http://efavdb.com/deep-learning-with-jupyter-on-aws/, use impiyush (code way) to do the config file for c.notebook
 
 http://machinelearningmastery.com/develop-evaluate-large-deep-learning-models-keras-amazon-web-services/#comment-372946
 
