@@ -1,6 +1,10 @@
 
-Check this first to run theano on GPU:
-http://efavdb.com/deep-learning-with-jupyter-on-aws/, use impiyush (code way) to do the config file for c.notebook
+Check this first to run theano on GPU: use cs231n ami which has reconfigured Theano, Keras, python and CUDA
+http://efavdb.com/deep-learning-with-jupyter-on-aws/, use impiyush (code way) to do the config file for c.notebook. The user bash file in efavdb
+does not work. 
+
+Then update Keras to latest version like the following link, and also install opencv (conda install opencv), and also configure theanorc file.
+If theanorc file is not configured, it doesn't default to GPU.
 
 http://machinelearningmastery.com/develop-evaluate-large-deep-learning-models-keras-amazon-web-services/#comment-372946
 
