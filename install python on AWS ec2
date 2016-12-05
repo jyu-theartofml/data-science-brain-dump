@@ -64,8 +64,10 @@ SOURCE: http://blog.impiyush.me/2015/02/running-ipython-notebook-server-on-aws.h
     # It is a good idea to put it on a known, fixed port
     c.NotebookApp.port = 8888
        
-       
+     WHne finished, type "esc", then :
     Type "q" to get out of viewing mode
+    type "wq" to save and then exit the file.
+   
 
     We are almost done. Now its time to start our Jupyter notebook server. For this, first I'll create a new folder which will store all my notebooks
 
