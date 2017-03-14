@@ -12,7 +12,7 @@ http://online.cambridgecoding.com/quick-courses
 
 ## Dataquest Blog
 https://www.dataquest.io/blog/
-<p>This is a blog written by Vik Paruchuri, a data science based in SF. He writes a post about twice a month to cover a particular topic. It has many useful tips, and he explains things very clearly and does example problem in Python code (mostly). I think this blog offers a glimps of the concrete skills companies are looking for in a data scientist.</p>
+<p>This is a blog written by Vik Paruchuri, a data scientist based in SF. He writes a post about twice a month to cover a particular topic. It has many useful tips, and he explains things very clearly and does example problem in Python code (mostly). I think this blog offers a glimps of the concrete skills companies are looking for in a data scientist.</p>
 
 ## Everybody's Favorite Data Blog
 http://efavdb.com/
