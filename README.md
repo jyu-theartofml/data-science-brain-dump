@@ -24,7 +24,7 @@ http://efavdb.com/
 
 ## Terra Incognita
 http://blog.christianperone.com/
-<p>In describing data science, machine learning as the "Unknown Land", Christiane dives into advanced machine learning topics such as Deep learning, extracting hypercolumns in Convolutional Neural Net, and Genetic Algorithm.</p>
+<p>In describing machine learning as the "Unknown Land", Christiane dives into advanced topics such as Deep learning, extracting hypercolumns in Convolutional Neural Net, and Genetic Algorithm.</p>
 
 ## Sebastian Raschka
 https://sebastianraschka.com/blog/index.html
