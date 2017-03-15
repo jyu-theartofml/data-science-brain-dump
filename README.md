@@ -5,6 +5,7 @@
 ## Analytics Vidhya 
 https://www.analyticsvidhya.com/blog/
 <p>For me this is by far the most visited web site to read up on a particular method, algorithm, or computing library. They have bloggers with diverse set of expertise in data science, and they have sections devoted to learning R, Python, Weka, Tableau and D3! What I like about this blog is that topics range from beginner to advanced. It's easy to get addicted to the content and spend hours on this blog. </p>
+
 ## The Official Blog of Kaggle
 http://blog.kaggle.com/
 <p>Kaggle is truly a treasure trove for data science and machine learning. I've learned so much from working on competition and reading the forum discussion. What's nice about the Kaggle blog is they interview winners or top performers and they spill the beans on the algorithms they used to achieve top ranking score. Interestingly, I've noticed alot of model stacking for regression problems. </p>
