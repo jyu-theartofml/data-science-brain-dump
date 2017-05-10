@@ -10,6 +10,10 @@ https://www.analyticsvidhya.com/blog/
 http://blog.kaggle.com/
 <p>Kaggle is truly a treasure trove for data science and machine learning. I've learned so much from working on competition and reading the forum discussion. What's nice about the Kaggle blog is they interview winners or top performers and they spill the beans on the algorithms they used to achieve top ranking score. Interestingly, I've noticed alot of model stacking for regression problems. </p>
 
+## Colah's Blog
+http://colah.github.io/
+<p> This blog by Christopher Olah is a gem in explaining deep learning principles starting from the Neural Network building block to the more advanced methods like Convolutional Neural Network, LSTM and Augmented Recurrent Neural Network. Olah's schematics are clean and informative, and his writings are concise. This is definitely one of the best blogs on deep learning.
+
 ## Cambridge Coding Academy
 http://online.cambridgecoding.com/quick-courses
 <p>This is a very Python-centric web portal that offers quick tutorials targeted at beginners or intermediate users in Python. The topics range from finding the best beer to Panda tricks every Data Scientist should know to analyzing genetic ancestry with 23AndMe data. Each post is concise, and it offers detailed Python script. Great for beginner in Machine Learning and Python. </p>
