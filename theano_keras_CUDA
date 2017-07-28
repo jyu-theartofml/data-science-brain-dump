@@ -16,3 +16,6 @@ http://ankivil.com/making-theano-faster-with-cudnn-and-cnmem-on-windows-10/
 
 Note, the commands presented need to be run in Anaconda command prompt
 the second link worked on windows 10 and python 2.7 env, follow instructions, esp in creating .theanorc file. it  should be .theanorc , no name infront of the .
+
+to dynamicall switch backends for Keras
+https://www.nodalpoint.com/switch-keras-backend/
