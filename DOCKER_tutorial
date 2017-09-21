@@ -1,3 +1,5 @@
+First, checkout Docker's own tutorial: https://docs.docker.com/get-started/part2/#conclusion-of-part-two
+(note: use 'docker-machine ip default' to check docker VM host ip, then use ip:port to launch app on browser)
 SOURCE URL:https://www.dataquest.io/blog/docker-data-science/
 This is a great resource regarding setting up Docker. Also checkout Kaggle's Docker tutorial (http://blog.kaggle.com/2016/02/05/how-to-get-started-with-data-science-in-containers/)
 
