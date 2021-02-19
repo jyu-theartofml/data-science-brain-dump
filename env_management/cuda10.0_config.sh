@@ -19,14 +19,6 @@ echo 'export PATH=$PATH:/usr/local/cuda/bin' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64' >> ~/.bashrc
 source ~/.bashrc
 
-Jenny Yu <jypucca@gmail.com>
-	
-Feb 17, 2021, 7:24 PM (2 days ago)
-	
-to me
-According to this thread
-
-Put this on git
 # Nvidia
 sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt update
