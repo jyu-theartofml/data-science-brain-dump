@@ -22,7 +22,7 @@
     "textMateRules": [
       {
         "name": "Bold font",
-        "scope": ["entity.name.method"], //"entity.name.method""meta.function
+        "scope": ["entity.name.method"],
         "settings": {
           "fontStyle": "bold"
         }
