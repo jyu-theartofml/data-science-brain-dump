@@ -1,0 +1,60 @@
+{
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.editor.enablePreview": false,
+  "window.zoomLevel": 2,
+  "eslint.format.enable": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "editor.fontFamily": "'Fira Code iScript', 'Courier New', Monaco, Consola",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "name": "Bold font",
+        "scope": ["entity.name.method"], //"entity.name.method""meta.function
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": [
+          //following will be excluded from italics (VSCode has some defaults for italics)
+          "comment",
+          "invalid",
+          "variable.parameter",
+          "variable.other.property",
+          "variable.other.event",
+          "variable.other.object.js",
+          "entity.other.attribute-name",
+          "keyword.control.flow.js",
+          "storage.type.struct",
+          "constant.numeric.css",
+          "keyword.other.unit.px.css",
+          "keyword.control"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "workbench.colorTheme": "Night Owl"
+}
